@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --almond-cream: #ecdcc9;
+    --wheat: #edd4b2;
+    --pale-oak: #cac2b5;
+    --tan: #d0a98f;
+    --smokey-rose: #8F6766;
+    --blackberry-cream: #4d243d;
+    --molten-lava: #720e07;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--blackberry-cream);
+    background-color: var(--almond-cream);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    background-color: var(--almond-cream);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 64px;
+    width: 64px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--molten-lava);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--smokey-rose);
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: var(--molten-lava);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--almond-cream);
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--molten-lava);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+    background-color: var(--wheat);
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: var(--molten-lava);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 24px;
+    color: var(--smokey-rose);
+    margin-bottom: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--blackberry-cream);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--molten-lava);
+    color: var(--almond-cream);
+    padding: 16px 48px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--blackberry-cream);
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: var(--almond-cream);
+}
+
+.about h2 {
+    font-size: 36px;
+    color: var(--molten-lava);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: var(--blackberry-cream);
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--tan);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    color: var(--molten-lava);
+    margin-bottom: 10px;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 80px 0;
+    background-color: var(--wheat);
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    color: var(--molten-lava);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--molten-lava);
+    color: var(--almond-cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 20px;
+    color: var(--molten-lava);
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--blackberry-cream);
+}
+
+/* Screenshots Section */
+.screenshots {
+    padding: 80px 0;
+    background-color: var(--pale-oak);
+}
+
+.screenshots h2 {
+    font-size: 36px;
+    color: var(--molten-lava);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.screenshot-placeholder {
+    aspect-ratio: 9/16;
+    background-color: var(--wheat);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--smokey-rose);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid var(--smokey-rose);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--almond-cream);
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    color: var(--molten-lava);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: var(--wheat);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--blackberry-cream);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--molten-lava);
+}
+
+.testimonial-role {
+    color: var(--smokey-rose);
+    font-size: 14px;
+}
+
+.screenshot {
+    height: 100%;
+    width: 100%;
+}
+
+/* Final CTA */
+.final-cta {
+    padding: 80px 0;
+    background-color: var(--molten-lava);
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 36px;
+    color: var(--almond-cream);
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    font-size: 18px;
+    color: var(--wheat);
+    margin-bottom: 40px;
+}
+
+.final-cta .cta-button {
+    background-color: var(--almond-cream);
+    color: var(--molten-lava);
+}
+
+.final-cta .cta-button:hover {
+    background-color: var(--wheat);
+}
+
+/* Email Form */
+.email-form,
+.hubspot-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style HubSpot form to match design */
+.hs-form-frame {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hs-form-frame form {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.hs-form-frame .hs-form-field {
+    flex: 1;
+    margin-bottom: 0 !important;
+}
+
+.hs-form-frame .hs-submit {
+    flex-shrink: 0;
+}
+
+.hs-form-frame input[type="email"],
+.hs-form-frame input[type="text"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid var(--tan);
+    border-radius: 8px;
+    background-color: var(--almond-cream);
+    margin-bottom: 0;
+}
+
+.hs-form-frame input[type="submit"] {
+    background-color: var(--molten-lava);
+    color: var(--almond-cream);
+    padding: 16px 48px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hs-form-frame input[type="submit"]:hover {
+    background-color: var(--blackberry-cream);
+}
+
+.final-cta .hs-form-frame input[type="submit"] {
+    background-color: var(--almond-cream);
+    color: var(--molten-lava);
+}
+
+.final-cta .hs-form-frame input[type="submit"]:hover {
+    background-color: var(--wheat);
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    background-color: var(--blackberry-cream);
+    color: var(--wheat);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .tagline {
+        font-size: 20px;
+    }
+
+    .about h2,
+    .how-it-works h2,
+    .screenshots h2,
+    .testimonials h2 {
+        font-size: 28px;
+    }
+
+}
