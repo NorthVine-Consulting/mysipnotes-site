@@ -39,6 +39,12 @@ header {
     align-items: center;
 }
 
+.header-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .logo {
     height: 64px;
     width: 64px;
@@ -80,6 +86,11 @@ nav a:hover {
     font-size: 24px;
     font-weight: 600;
     color: var(--molten-lava);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
 }
 
 /* Hero Section */
@@ -448,4 +459,100 @@ footer {
         font-size: 28px;
     }
 
+
+    /* privacy policy */
+}
+
+/* Privacy Policy */
+.privacy-policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.privacy-policy-content h1 {
+    font-size: 42px;
+    color: var(--molten-lava);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.privacy-policy-content .last-updated {
+    color: var(--smokey-rose);
+    font-size: 14px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--pale-oak);
+}
+
+.privacy-policy-content h2 {
+    font-size: 28px;
+    color: var(--molten-lava);
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.privacy-policy-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--blackberry-cream);
+    margin-bottom: 16px;
+}
+
+.privacy-policy-content ul {
+    margin: 16px 0;
+    padding-left: 40px;
+}
+
+.privacy-policy-content li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--blackberry-cream);
+    margin-bottom: 12px;
+}
+
+.privacy-policy-content .highlight {
+    background-color: var(--wheat);
+    border-left: 4px solid var(--molten-lava);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 4px;
+}
+
+.privacy-policy-content .highlight p {
+    margin-bottom: 0;
+}
+
+.privacy-policy-content a {
+    color: var(--molten-lava);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-policy-content a:hover {
+    color: var(--smokey-rose);
+}
+
+.privacy-policy-content .footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid var(--pale-oak);
+    text-align: center;
+    font-style: italic;
+    color: var(--smokey-rose);
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-content h1 {
+        font-size: 32px;
+    }
+
+    .privacy-policy-content h2 {
+        font-size: 24px;
+    }
+
+    .privacy-policy-content ul {
+        padding-left: 24px;
+    }
 }
