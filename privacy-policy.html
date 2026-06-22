@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -14,8 +15,7 @@
             <div class="header-content">
                 <div class="logo-container">
                     <a href="https://mysipnotes.com">
-                        <img class="logo" src="./images/logo_1024x1024.png" />
-                        <span class="brand-name">MySipNotes</span>
+                        <img class="logo" src="./images/pour-lockup.svg" alt="MySipNotes" />
                     </a>
                 </div>
                 <nav>
@@ -28,60 +28,203 @@
 
     <div class="container privacy-policy-content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> December 26, 2025</p>
+        <p class="last-updated"><strong>Effective Date:</strong> June 14, 2026</p>
 
-        <h2>Overview</h2>
-        <p>We believe in transparency about how we handle your data. This Privacy Policy explains what information our
-            application collects and how we use it.</p>
+        <p>This Privacy Policy describes how mysipnotes ("the App", "we", "us", or "our") collects, uses, and shares
+            information when you use our mobile application.</p>
+        <p>By using mysipnotes, you agree to the collection and use of information in accordance with this policy.</p>
 
-        <h2>Data Storage</h2>
-        <div class="highlight">
-            <p><strong>All of your application data is stored locally on your device.</strong> We do not store,
-                transmit, or have access to any of your personal content or data that you create or use within the
-                application.</p>
-        </div>
+        <h2>Who We Are</h2>
+        <p>mysipnotes is developed and operated by <strong>NorthVine Consulting</strong> ("Developer"). If you have
+            questions about this policy or your data, contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
 
         <h2>Information We Collect</h2>
-        <p>We collect minimal technical information solely for the purpose of maintaining and improving our application:
-        </p>
+
+        <h3>Account Information</h3>
+        <p>When you create an account, we collect:</p>
         <ul>
-            <li><strong>Error Reports:</strong> When the application encounters errors, we collect technical error
-                information to help us identify and fix bugs</li>
-            <li><strong>Session Information:</strong> We collect anonymous session IDs and basic usage metrics to
-                understand how the application is being used and to improve its performance</li>
+            <li>Your <strong>email address</strong> and a securely hashed password (if you sign up with
+                email/password), or</li>
+            <li>Basic profile information from <strong>Google Sign-In</strong> (name, email address, profile photo)
+                if you choose to sign in with Google.</li>
+        </ul>
+        <p>This information is used to create and secure your account and is stored via <strong>Firebase
+                Authentication</strong> (a Google service).</p>
+
+        <h3>User Content</h3>
+        <p>mysipnotes lets you create tasting notes and records about wine. This may include:</p>
+        <ul>
+            <li>Wine names, ratings, tasting notes, and other details you enter</li>
+            <li><strong>Photos of wine labels</strong> that you take with your device's camera or select from your
+                photo library</li>
+            <li><strong>Voice notes / audio recordings</strong> you record within the app to capture tasting
+                impressions</li>
+            <li><strong>Location data</strong> (precise or approximate) that you choose to attach to a tasting entry,
+                to record where you tasted a wine</li>
+        </ul>
+        <p>All of this content is stored in your account so it syncs across your devices and is associated with you.
+            Photos and audio you create are stored using <strong>Firebase Cloud Storage</strong>, and your
+            notes/metadata are stored in <strong>Firebase Firestore</strong> (both Google Cloud services).</p>
+
+        <h3>Camera and Photo Library Access</h3>
+        <p>The App requests access to your device's <strong>camera</strong> and <strong>photo library</strong>
+            solely so you can photograph or select images of wine labels to attach to your tasting notes. We do not
+            access your camera or photo library except when you actively choose to take or select a photo within the
+            App.</p>
+
+        <h3>Location Data</h3>
+        <p>The App requests access to your device's <strong>precise and/or approximate location</strong> so you can
+            optionally tag a tasting entry with the place where you tasted a wine. Location access is used only when
+            you choose to attach a location to an entry, and you can deny or revoke this permission at any time in
+            your device settings without affecting the rest of the App's functionality.</p>
+
+        <h3>Microphone / Audio Recordings</h3>
+        <p>The App requests access to your device's <strong>microphone</strong> so you can record voice notes
+            describing your tasting impressions. Audio is only recorded when you actively start a recording within
+            the App, and recordings are stored as part of your tasting notes as described above.</p>
+
+        <h3>Subscription and Purchase Information</h3>
+        <p>mysipnotes offers optional premium subscriptions, processed through:</p>
+        <ul>
+            <li><strong>Apple App Store</strong> (for iOS purchases)</li>
+            <li><strong>Google Play Store</strong> (for Android purchases)</li>
+            <li><strong>RevenueCat</strong>, a subscription management platform that helps us validate purchases and
+                manage entitlements across platforms</li>
+        </ul>
+        <p>When you make a purchase, Apple, Google, and RevenueCat process your payment and provide us with
+            information such as your subscription status, entitlement, purchase/renewal dates, and an anonymized
+            purchaser identifier. <strong>We do not receive or store your full payment card details</strong> — these
+            are handled entirely by Apple and Google.</p>
+
+        <h3>Automatically Collected Information</h3>
+        <p>We may automatically collect limited technical information necessary to operate the App, such as:</p>
+        <ul>
+            <li>Device identifiers used by Firebase Authentication and RevenueCat to associate your account/purchases
+                with your device</li>
+            <li>Basic diagnostic information (e.g., crash logs), if applicable</li>
+        </ul>
+        <p>We do not currently use third-party advertising or analytics SDKs.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information described above to:</p>
+        <ul>
+            <li>Create and maintain your account</li>
+            <li>Store, sync, and display your tasting notes, photos, voice notes, and location tags across your
+                devices</li>
+            <li>Provide, maintain, and improve the App's features</li>
+            <li>Process and manage subscriptions and premium entitlements</li>
+            <li>Communicate with you about your account (e.g., security or service notices)</li>
+            <li>Maintain the security and integrity of the App</li>
         </ul>
 
-        <h2>What We Don't Collect</h2>
-        <p>We do not collect:</p>
+        <div class="highlight">
+            <p>We do not sell your personal information, and we do not use your content for advertising purposes.</p>
+        </div>
+
+        <h2>How We Share Your Information</h2>
+        <p>We only share information with the service providers that help us operate the App, and only as necessary
+            to provide our services:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Recipient</th>
+                    <th>Purpose</th>
+                    <th>Data Involved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Storage)</td>
+                    <td>Account management, data storage and sync</td>
+                    <td>Email, account ID, tasting notes, photos, audio recordings, location tags</td>
+                </tr>
+                <tr>
+                    <td><strong>RevenueCat</strong></td>
+                    <td>Subscription/entitlement management</td>
+                    <td>Anonymized user ID, purchase/subscription status</td>
+                </tr>
+                <tr>
+                    <td><strong>Apple App Store / Google Play</strong></td>
+                    <td>Payment processing for subscriptions</td>
+                    <td>Purchase transaction data</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>These providers are only permitted to use your data to provide services to us, and are bound by their own
+            privacy policies and data protection obligations:</p>
         <ul>
-            <li>Personal identification information (no login, email, name, etc.)</li>
-            <li>User-generated content</li>
-            <li>Location data</li>
-            <li>Device identifiers beyond anonymous session IDs</li>
-            <li>Any data that could be used to identify you personally</li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy
+                    Policy</a></li>
+            <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy
+                    Policy</a></li>
+            <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy
+                    Policy</a></li>
         </ul>
+        <p>We may also disclose information if required to do so by law, or to protect the rights, property, or
+            safety of us, our users, or others.</p>
+        <p>We do not share your information with third parties for their own marketing purposes.</p>
+
+        <h2>Data Retention</h2>
+        <p>We retain your account information and user content for as long as your account is active, or as needed
+            to provide you the App's services. If you delete your account (or request deletion, see "Your Rights and
+            Choices"), we will delete or anonymize your personal data within a reasonable timeframe, except where we
+            are required to retain certain records (e.g., transaction records) for legal or accounting purposes.</p>
+
+        <h2>Your Rights and Choices</h2>
+        <p>Depending on your location, you may have the right to:</p>
+        <ul>
+            <li><strong>Access</strong> the personal data we hold about you</li>
+            <li><strong>Correct</strong> inaccurate data</li>
+            <li><strong>Delete</strong> your account and associated data</li>
+            <li><strong>Export</strong> your data in a portable format</li>
+            <li><strong>Withdraw consent</strong> for optional permissions (camera, photo library, location,
+                microphone) at any time via your device's settings</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at the email address in "Who We Are". We will respond within a
+            reasonable timeframe and in accordance with applicable law.</p>
+
+        <h3>California Residents (CCPA/CPRA)</h3>
+        <p>We do not sell or share personal information as defined under the CCPA/CPRA. California residents have the
+            right to request access to, deletion of, or correction of their personal information, and the right to
+            non-discrimination for exercising these rights.</p>
+
+        <h3>European Economic Area / UK Residents (GDPR)</h3>
+        <p>If you are located in the EEA or UK, our legal bases for processing your information are: performance of a
+            contract (providing the App's core features), consent (for optional permissions like camera, location,
+            and microphone), and legitimate interests (maintaining and securing the App). You have the rights
+            described above, as well as the right to lodge a complaint with your local data protection authority.</p>
 
         <h2>Data Security</h2>
-        <p>Since all your application data is stored locally on your device, you maintain complete control over it. The
-            technical information we collect (error logs and session data) is anonymous and cannot be linked to any
-            individual user.</p>
-
-        <h2>Third-Party Services</h2>
-        <p>We do not share any information with third parties for marketing, advertising, or other purposes.</p>
+        <p>We use industry-standard measures to protect your information, including encryption in transit
+            (HTTPS/TLS) and access controls provided by Firebase. However, no method of electronic storage or
+            transmission is 100% secure, and we cannot guarantee absolute security.</p>
 
         <h2>Children's Privacy</h2>
-        <p>Our application does not knowingly collect any information from children under 13 years of age.</p>
+        <p>mysipnotes is not directed to children under the age of 13 (or the equivalent minimum age in your
+            jurisdiction), and we do not knowingly collect personal information from children. mysipnotes is also a
+            wine-related app intended for users of legal drinking age in their jurisdiction. If you believe a child
+            has provided us with personal information, please contact us so we can delete it.</p>
+
+        <h2>International Data Transfers</h2>
+        <p>Your information may be stored and processed in the United States or other countries where our service
+            providers (such as Google Firebase) operate. These countries may have data protection laws different
+            from those in your country of residence. By using the App, you consent to this transfer, storage, and
+            processing.</p>
 
         <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated
-            "Last Updated" date.</p>
+        <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the
+            "Effective Date" at the top of this policy and, where appropriate, notify you through the App. Your
+            continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
 
         <h2>Contact Us</h2>
-        <p>If you have questions about this Privacy Policy, please contact us at <a
-                href="mailto:support@mysipnotes.com">support@mysipnotes.com</a>.</p>
+        <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
 
         <div class="footer">
-            <p>By using this application, you agree to this Privacy Policy.</p>
+            <p>By using mysipnotes, you agree to this Privacy Policy.</p>
         </div>
     </div>
 </body>
