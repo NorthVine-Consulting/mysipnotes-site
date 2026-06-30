@@ -1,232 +1,558 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — mysipnotes</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <style>
+      @font-face {
+        font-family: "Cormorant Garamond";
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url("assets/512c82ba.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Cormorant Garamond";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("assets/80151509.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Hanken Grotesk";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("assets/8a0215e0.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Hanken Grotesk";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("assets/8a0215e0.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Hanken Grotesk";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("assets/8a0215e0.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <link rel="stylesheet" href="./styles.css" />
-</head>
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
 
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <a href="https://mysipnotes.com">
-                        <img class="logo" src="./images/pour-lockup.svg" alt="MySipNotes" />
-                    </a>
-                </div>
-                <nav>
-                    <a href="https://blog.mysipnotes.com">Blog</a>
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+      body {
+        margin: 0;
+        font-family: "Hanken Grotesk", sans-serif;
+        color: #2b1410;
+        background: #faf6ee;
+        overflow-x: hidden;
+      }
 
-    <div class="container privacy-policy-content">
+      /* ── NAV ── */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+        background: rgba(250, 246, 238, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #ece1cc;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo-text {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #45050c;
+      }
+      .nav-logo-text span { color: #8b6220; }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #5c4a3d;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      @media (min-width: 640px) {
+        .nav { padding: 18px 48px; background: rgba(250, 246, 238, 0.82); }
+        .nav-logo-text { font-size: 22px; }
+        .nav-links { gap: 34px; }
+        .nav-links a { font-size: 15px; }
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: radial-gradient(120% 100% at 80% 0%, #5c0f0a 0%, #45050c 48%, #2a0307 100%);
+        padding: 44px 20px 52px;
+      }
+      .hero-inner { max-width: 760px; margin: 0 auto; }
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: #fbf3e6;
+        margin: 0 0 12px;
+      }
+      .hero-date {
+        font-size: 14px;
+        color: #c9a99a;
+        margin: 0;
+      }
+      .hero-date strong { color: #e6cdbf; font-weight: 500; }
+
+      @media (min-width: 640px) {
+        .hero { padding: 64px 48px 72px; }
+        .hero h1 { font-size: 52px; }
+        .hero-date { font-size: 15px; }
+      }
+
+      /* ── CONTENT ── */
+      .content {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 20px 72px;
+      }
+
+      @media (min-width: 640px) {
+        .content { padding: 60px 40px 96px; }
+      }
+
+      /* ── TYPOGRAPHY ── */
+      .content p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #5c4a3d;
+        margin: 0 0 16px;
+      }
+      .content p:last-child { margin-bottom: 0; }
+
+      .content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        color: #45050c;
+        margin: 48px 0 14px;
+        padding-top: 48px;
+        border-top: 1px solid #e7ddcc;
+      }
+      .content h2:first-child,
+      .intro + h2 { border-top: none; padding-top: 0; margin-top: 0; }
+
+      .content h3 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #2b1410;
+        margin: 32px 0 10px;
+      }
+
+      @media (min-width: 640px) {
+        .content p { font-size: 17px; }
+        .content h2 { font-size: 34px; }
+        .content h3 { font-size: 18px; }
+      }
+
+      /* ── INTRO BLURB ── */
+      .intro { margin-bottom: 40px; }
+
+      /* ── LISTS ── */
+      .content ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .content ul li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 15px;
+        line-height: 1.65;
+        color: #5c4a3d;
+      }
+      .content ul li .bullet {
+        color: #720e07;
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .content ul li strong { color: #2b1410; }
+
+      @media (min-width: 640px) {
+        .content ul li { font-size: 16px; }
+      }
+
+      /* ── LINKS ── */
+      .content a {
+        color: #720e07;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .content strong { color: #2b1410; }
+
+      /* ── CALLOUT ── */
+      .callout {
+        background: #fff;
+        border: 1px solid #f0e7d6;
+        border-left: 4px solid #720e07;
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin: 24px 0;
+      }
+      .callout p {
+        font-size: 15px;
+        font-weight: 500;
+        color: #2b1410;
+        margin: 0;
+      }
+
+      @media (min-width: 640px) {
+        .callout { padding: 22px 26px; }
+        .callout p { font-size: 16px; }
+      }
+
+      /* ── TABLE ── */
+      .table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 16px 0 20px;
+        border-radius: 12px;
+        border: 1px solid #f0e7d6;
+      }
+      .table-wrap table {
+        width: 100%;
+        min-width: 480px;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      .table-wrap thead tr { background: #f3ead9; }
+      .table-wrap th {
+        text-align: left;
+        padding: 12px 16px;
+        color: #45050c;
+        font-weight: 600;
+        border-bottom: 1px solid #e7ddcc;
+        white-space: nowrap;
+      }
+      .table-wrap td {
+        padding: 12px 16px;
+        color: #5c4a3d;
+        vertical-align: top;
+        border-bottom: 1px solid #f0e7d6;
+        line-height: 1.55;
+      }
+      .table-wrap tr:last-child td { border-bottom: none; }
+      .table-wrap tbody tr:nth-child(odd) { background: #fff; }
+      .table-wrap tbody tr:nth-child(even) { background: #faf6ee; }
+      .table-wrap td strong { color: #2b1410; }
+
+      @media (min-width: 640px) {
+        .table-wrap table { font-size: 15px; }
+        .table-wrap th, .table-wrap td { padding: 14px 18px; }
+      }
+
+      /* ── DIVIDER ── */
+      .divider {
+        height: 1px;
+        background: #e7ddcc;
+        margin: 48px 0 28px;
+      }
+
+      /* ── AGREEMENT ── */
+      .agreement {
+        font-size: 14px;
+        color: #9c8a7c;
+        text-align: center;
+        margin: 0;
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        background: #2a0307;
+        padding: 40px 20px;
+        color: #c9a99a;
+      }
+      .footer-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+      }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .footer-logo-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #f3e7c4;
+      }
+      .footer-logo-text span { color: #d5ac4e; }
+      .footer-links {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer-links a { color: #c9a99a; text-decoration: none; }
+      .footer-copy { font-size: 13px; color: #7a4a3e; }
+
+      @media (min-width: 640px) {
+        .footer { padding: 52px 48px; }
+        .footer-inner {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+          align-items: center;
+        }
+        .footer-links { justify-content: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="https://mysipnotes.com" class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 120 120" fill="none">
+          <defs>
+            <clipPath id="navc">
+              <path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path>
+            </clipPath>
+          </defs>
+          <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#720e07" clip-path="url(#navc)"></path>
+          <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#45050c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="M60 72 V98" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+          <path d="M44 100 H76" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+        </svg>
+        <span class="nav-logo-text">mysip<span>notes</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.mysipnotes.com">Blog</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-inner">
         <h1>Privacy Policy</h1>
-        <p class="last-updated"><strong>Effective Date:</strong> June 14, 2026</p>
-
-        <p>This Privacy Policy describes how mysipnotes ("the App", "we", "us", or "our") collects, uses, and shares
-            information when you use our mobile application.</p>
-        <p>By using mysipnotes, you agree to the collection and use of information in accordance with this policy.</p>
-
-        <h2>Who We Are</h2>
-        <p>mysipnotes is developed and operated by <strong>NorthVine Consulting</strong> ("Developer"). If you have
-            questions about this policy or your data, contact us at:</p>
-        <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
-
-        <h2>Information We Collect</h2>
-
-        <h3>Account Information</h3>
-        <p>When you create an account, we collect:</p>
-        <ul>
-            <li>Your <strong>email address</strong> and a securely hashed password (if you sign up with
-                email/password), or</li>
-            <li>Basic profile information from <strong>Google Sign-In</strong> (name, email address, profile photo)
-                if you choose to sign in with Google.</li>
-        </ul>
-        <p>This information is used to create and secure your account and is stored via <strong>Firebase
-                Authentication</strong> (a Google service).</p>
-
-        <h3>User Content</h3>
-        <p>mysipnotes lets you create tasting notes and records about wine. This may include:</p>
-        <ul>
-            <li>Wine names, ratings, tasting notes, and other details you enter</li>
-            <li><strong>Photos of wine labels</strong> that you take with your device's camera or select from your
-                photo library</li>
-            <li><strong>Voice notes / audio recordings</strong> you record within the app to capture tasting
-                impressions</li>
-            <li><strong>Location data</strong> (precise or approximate) that you choose to attach to a tasting entry,
-                to record where you tasted a wine</li>
-        </ul>
-        <p>All of this content is stored in your account so it syncs across your devices and is associated with you.
-            Photos and audio you create are stored using <strong>Firebase Cloud Storage</strong>, and your
-            notes/metadata are stored in <strong>Firebase Firestore</strong> (both Google Cloud services).</p>
-
-        <h3>Camera and Photo Library Access</h3>
-        <p>The App requests access to your device's <strong>camera</strong> and <strong>photo library</strong>
-            solely so you can photograph or select images of wine labels to attach to your tasting notes. We do not
-            access your camera or photo library except when you actively choose to take or select a photo within the
-            App.</p>
-
-        <h3>Location Data</h3>
-        <p>The App requests access to your device's <strong>precise and/or approximate location</strong> so you can
-            optionally tag a tasting entry with the place where you tasted a wine. Location access is used only when
-            you choose to attach a location to an entry, and you can deny or revoke this permission at any time in
-            your device settings without affecting the rest of the App's functionality.</p>
-
-        <h3>Microphone / Audio Recordings</h3>
-        <p>The App requests access to your device's <strong>microphone</strong> so you can record voice notes
-            describing your tasting impressions. Audio is only recorded when you actively start a recording within
-            the App, and recordings are stored as part of your tasting notes as described above.</p>
-
-        <h3>Subscription and Purchase Information</h3>
-        <p>mysipnotes offers optional premium subscriptions, processed through:</p>
-        <ul>
-            <li><strong>Apple App Store</strong> (for iOS purchases)</li>
-            <li><strong>Google Play Store</strong> (for Android purchases)</li>
-            <li><strong>RevenueCat</strong>, a subscription management platform that helps us validate purchases and
-                manage entitlements across platforms</li>
-        </ul>
-        <p>When you make a purchase, Apple, Google, and RevenueCat process your payment and provide us with
-            information such as your subscription status, entitlement, purchase/renewal dates, and an anonymized
-            purchaser identifier. <strong>We do not receive or store your full payment card details</strong> — these
-            are handled entirely by Apple and Google.</p>
-
-        <h3>Automatically Collected Information</h3>
-        <p>We may automatically collect limited technical information necessary to operate the App, such as:</p>
-        <ul>
-            <li>Device identifiers used by Firebase Authentication and RevenueCat to associate your account/purchases
-                with your device</li>
-            <li>Basic diagnostic information (e.g., crash logs), if applicable</li>
-        </ul>
-        <p>We do not currently use third-party advertising or analytics SDKs.</p>
-
-        <h2>How We Use Your Information</h2>
-        <p>We use the information described above to:</p>
-        <ul>
-            <li>Create and maintain your account</li>
-            <li>Store, sync, and display your tasting notes, photos, voice notes, and location tags across your
-                devices</li>
-            <li>Provide, maintain, and improve the App's features</li>
-            <li>Process and manage subscriptions and premium entitlements</li>
-            <li>Communicate with you about your account (e.g., security or service notices)</li>
-            <li>Maintain the security and integrity of the App</li>
-        </ul>
-
-        <div class="highlight">
-            <p>We do not sell your personal information, and we do not use your content for advertising purposes.</p>
-        </div>
-
-        <h2>How We Share Your Information</h2>
-        <p>We only share information with the service providers that help us operate the App, and only as necessary
-            to provide our services:</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Recipient</th>
-                    <th>Purpose</th>
-                    <th>Data Involved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Storage)</td>
-                    <td>Account management, data storage and sync</td>
-                    <td>Email, account ID, tasting notes, photos, audio recordings, location tags</td>
-                </tr>
-                <tr>
-                    <td><strong>RevenueCat</strong></td>
-                    <td>Subscription/entitlement management</td>
-                    <td>Anonymized user ID, purchase/subscription status</td>
-                </tr>
-                <tr>
-                    <td><strong>Apple App Store / Google Play</strong></td>
-                    <td>Payment processing for subscriptions</td>
-                    <td>Purchase transaction data</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>These providers are only permitted to use your data to provide services to us, and are bound by their own
-            privacy policies and data protection obligations:</p>
-        <ul>
-            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy
-                    Policy</a></li>
-            <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy
-                    Policy</a></li>
-            <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy
-                    Policy</a></li>
-        </ul>
-        <p>We may also disclose information if required to do so by law, or to protect the rights, property, or
-            safety of us, our users, or others.</p>
-        <p>We do not share your information with third parties for their own marketing purposes.</p>
-
-        <h2>Data Retention</h2>
-        <p>We retain your account information and user content for as long as your account is active, or as needed
-            to provide you the App's services. If you delete your account (or request deletion, see "Your Rights and
-            Choices"), we will delete or anonymize your personal data within a reasonable timeframe, except where we
-            are required to retain certain records (e.g., transaction records) for legal or accounting purposes.</p>
-
-        <h2>Your Rights and Choices</h2>
-        <p>Depending on your location, you may have the right to:</p>
-        <ul>
-            <li><strong>Access</strong> the personal data we hold about you</li>
-            <li><strong>Correct</strong> inaccurate data</li>
-            <li><strong>Delete</strong> your account and associated data</li>
-            <li><strong>Export</strong> your data in a portable format</li>
-            <li><strong>Withdraw consent</strong> for optional permissions (camera, photo library, location,
-                microphone) at any time via your device's settings</li>
-        </ul>
-        <p>To exercise any of these rights, contact us at the email address in "Who We Are". We will respond within a
-            reasonable timeframe and in accordance with applicable law.</p>
-
-        <h3>California Residents (CCPA/CPRA)</h3>
-        <p>We do not sell or share personal information as defined under the CCPA/CPRA. California residents have the
-            right to request access to, deletion of, or correction of their personal information, and the right to
-            non-discrimination for exercising these rights.</p>
-
-        <h3>European Economic Area / UK Residents (GDPR)</h3>
-        <p>If you are located in the EEA or UK, our legal bases for processing your information are: performance of a
-            contract (providing the App's core features), consent (for optional permissions like camera, location,
-            and microphone), and legitimate interests (maintaining and securing the App). You have the rights
-            described above, as well as the right to lodge a complaint with your local data protection authority.</p>
-
-        <h2>Data Security</h2>
-        <p>We use industry-standard measures to protect your information, including encryption in transit
-            (HTTPS/TLS) and access controls provided by Firebase. However, no method of electronic storage or
-            transmission is 100% secure, and we cannot guarantee absolute security.</p>
-
-        <h2>Children's Privacy</h2>
-        <p>mysipnotes is not directed to children under the age of 13 (or the equivalent minimum age in your
-            jurisdiction), and we do not knowingly collect personal information from children. mysipnotes is also a
-            wine-related app intended for users of legal drinking age in their jurisdiction. If you believe a child
-            has provided us with personal information, please contact us so we can delete it.</p>
-
-        <h2>International Data Transfers</h2>
-        <p>Your information may be stored and processed in the United States or other countries where our service
-            providers (such as Google Firebase) operate. These countries may have data protection laws different
-            from those in your country of residence. By using the App, you consent to this transfer, storage, and
-            processing.</p>
-
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the
-            "Effective Date" at the top of this policy and, where appropriate, notify you through the App. Your
-            continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at:</p>
-        <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
-
-        <div class="footer">
-            <p>By using mysipnotes, you agree to this Privacy Policy.</p>
-        </div>
+        <p class="hero-date"><strong>Effective Date:</strong> June 14, 2026</p>
+      </div>
     </div>
-</body>
 
+    <!-- CONTENT -->
+    <div class="content">
+
+      <div class="intro">
+        <p>This Privacy Policy describes how mysipnotes ("the App", "we", "us", or "our") collects, uses, and shares information when you use our mobile application.</p>
+        <p>By using mysipnotes, you agree to the collection and use of information in accordance with this policy.</p>
+      </div>
+
+      <h2>Who We Are</h2>
+      <p>mysipnotes is developed and operated by <strong>NorthVine Consulting</strong> ("Developer"). If you have questions about this policy or your data, contact us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
+
+      <h2>Information We Collect</h2>
+
+      <h3>Account Information</h3>
+      <p>When you create an account, we collect:</p>
+      <ul>
+        <li><span class="bullet">•</span>Your <strong>email address</strong> and a securely hashed password (if you sign up with email/password), or</li>
+        <li><span class="bullet">•</span>Basic profile information from <strong>Google Sign-In</strong> (name, email address, profile photo) if you choose to sign in with Google.</li>
+      </ul>
+      <p>This information is used to create and secure your account and is stored via <strong>Firebase Authentication</strong> (a Google service).</p>
+
+      <h3>User Content</h3>
+      <p>mysipnotes lets you create tasting notes and records about wine. This may include:</p>
+      <ul>
+        <li><span class="bullet">•</span>Wine names, ratings, tasting notes, and other details you enter</li>
+        <li><span class="bullet">•</span><strong>Photos of wine labels</strong> that you take with your device's camera or select from your photo library</li>
+        <li><span class="bullet">•</span><strong>Voice notes / audio recordings</strong> you record within the app to capture tasting impressions</li>
+        <li><span class="bullet">•</span><strong>Location data</strong> (precise or approximate) that you choose to attach to a tasting entry, to record where you tasted a wine</li>
+      </ul>
+      <p>All of this content is stored in your account so it syncs across your devices and is associated with you. Photos and audio you create are stored using <strong>Firebase Cloud Storage</strong>, and your notes/metadata are stored in <strong>Firebase Firestore</strong> (both Google Cloud services).</p>
+
+      <h3>Camera and Photo Library Access</h3>
+      <p>The App requests access to your device's <strong>camera</strong> and <strong>photo library</strong> solely so you can photograph or select images of wine labels to attach to your tasting notes. We do not access your camera or photo library except when you actively choose to take or select a photo within the App.</p>
+
+      <h3>Location Data</h3>
+      <p>The App requests access to your device's <strong>precise and/or approximate location</strong> so you can optionally tag a tasting entry with the place where you tasted a wine. Location access is used only when you choose to attach a location to an entry, and you can deny or revoke this permission at any time in your device settings without affecting the rest of the App's functionality.</p>
+
+      <h3>Microphone / Audio Recordings</h3>
+      <p>The App requests access to your device's <strong>microphone</strong> so you can record voice notes describing your tasting impressions. Audio is only recorded when you actively start a recording within the App, and recordings are stored as part of your tasting notes as described above.</p>
+
+      <h3>Subscription and Purchase Information</h3>
+      <p>mysipnotes offers optional premium subscriptions, processed through:</p>
+      <ul>
+        <li><span class="bullet">•</span><strong>Apple App Store</strong> (for iOS purchases)</li>
+        <li><span class="bullet">•</span><strong>Google Play Store</strong> (for Android purchases)</li>
+        <li><span class="bullet">•</span><strong>RevenueCat</strong>, a subscription management platform that helps us validate purchases and manage entitlements across platforms</li>
+      </ul>
+      <p>When you make a purchase, Apple, Google, and RevenueCat process your payment and provide us with information such as your subscription status, entitlement, purchase/renewal dates, and an anonymized purchaser identifier. <strong>We do not receive or store your full payment card details</strong> — these are handled entirely by Apple and Google.</p>
+
+      <h3>Automatically Collected Information</h3>
+      <p>We may automatically collect limited technical information necessary to operate the App, such as:</p>
+      <ul>
+        <li><span class="bullet">•</span>Device identifiers used by Firebase Authentication and RevenueCat to associate your account/purchases with your device</li>
+        <li><span class="bullet">•</span>Basic diagnostic information (e.g., crash logs), if applicable</li>
+      </ul>
+      <p>We do not currently use third-party advertising or analytics SDKs.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information described above to:</p>
+      <ul>
+        <li><span class="bullet">•</span>Create and maintain your account</li>
+        <li><span class="bullet">•</span>Store, sync, and display your tasting notes, photos, voice notes, and location tags across your devices</li>
+        <li><span class="bullet">•</span>Provide, maintain, and improve the App's features</li>
+        <li><span class="bullet">•</span>Process and manage subscriptions and premium entitlements</li>
+        <li><span class="bullet">•</span>Communicate with you about your account (e.g., security or service notices)</li>
+        <li><span class="bullet">•</span>Maintain the security and integrity of the App</li>
+      </ul>
+
+      <div class="callout">
+        <p>We do not sell your personal information, and we do not use your content for advertising purposes.</p>
+      </div>
+
+      <h2>How We Share Your Information</h2>
+      <p>We only share information with the service providers that help us operate the App, and only as necessary to provide our services:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Recipient</th>
+              <th>Purpose</th>
+              <th>Data Involved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Firebase</strong></td>
+              <td>Account management, data storage and sync</td>
+              <td>Email, account ID, tasting notes, photos, audio recordings, location tags</td>
+            </tr>
+            <tr>
+              <td><strong>RevenueCat</strong></td>
+              <td>Subscription/entitlement management</td>
+              <td>Anonymized user ID, purchase/subscription status</td>
+            </tr>
+            <tr>
+              <td><strong>Apple App Store / Google Play</strong></td>
+              <td>Payment processing for subscriptions</td>
+              <td>Purchase transaction data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>These providers are only permitted to use your data to provide services to us, and are bound by their own privacy policies and data protection obligations:</p>
+      <ul>
+        <li><span class="bullet">•</span><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        <li><span class="bullet">•</span><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
+        <li><span class="bullet">•</span><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
+      </ul>
+      <p>We may also disclose information if required to do so by law, or to protect the rights, property, or safety of us, our users, or others.</p>
+      <p>We do not share your information with third parties for their own marketing purposes.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain your account information and user content for as long as your account is active, or as needed to provide you the App's services. If you delete your account (or request deletion, see "Your Rights and Choices"), we will delete or anonymize your personal data within a reasonable timeframe, except where we are required to retain certain records (e.g., transaction records) for legal or accounting purposes.</p>
+
+      <h2>Your Rights and Choices</h2>
+      <p>Depending on your location, you may have the right to:</p>
+      <ul>
+        <li><span class="bullet">•</span><strong>Access</strong> the personal data we hold about you</li>
+        <li><span class="bullet">•</span><strong>Correct</strong> inaccurate data</li>
+        <li><span class="bullet">•</span><strong>Delete</strong> your account and associated data</li>
+        <li><span class="bullet">•</span><strong>Export</strong> your data in a portable format</li>
+        <li><span class="bullet">•</span><strong>Withdraw consent</strong> for optional permissions (camera, photo library, location, microphone) at any time via your device's settings</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at the email address in "Who We Are". We will respond within a reasonable timeframe and in accordance with applicable law.</p>
+
+      <h3>California Residents (CCPA/CPRA)</h3>
+      <p>We do not sell or share personal information as defined under the CCPA/CPRA. California residents have the right to request access to, deletion of, or correction of their personal information, and the right to non-discrimination for exercising these rights.</p>
+
+      <h3>European Economic Area / UK Residents (GDPR)</h3>
+      <p>If you are located in the EEA or UK, our legal bases for processing your information are: performance of a contract (providing the App's core features), consent (for optional permissions like camera, location, and microphone), and legitimate interests (maintaining and securing the App). You have the rights described above, as well as the right to lodge a complaint with your local data protection authority.</p>
+
+      <h2>Data Security</h2>
+      <p>We use industry-standard measures to protect your information, including encryption in transit (HTTPS/TLS) and access controls provided by Firebase. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>mysipnotes is not directed to children under the age of 13 (or the equivalent minimum age in your jurisdiction), and we do not knowingly collect personal information from children. mysipnotes is also a wine-related app intended for users of legal drinking age in their jurisdiction. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+
+      <h2>International Data Transfers</h2>
+      <p>Your information may be stored and processed in the United States or other countries where our service providers (such as Google Firebase) operate. These countries may have data protection laws different from those in your country of residence. By using the App, you consent to this transfer, storage, and processing.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the "Effective Date" at the top of this policy and, where appropriate, notify you through the App. Your continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@northvineconsulting.com">support@northvineconsulting.com</a></p>
+
+      <div class="divider"></div>
+      <p class="agreement">By using mysipnotes, you agree to this Privacy Policy.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
+            <defs>
+              <clipPath id="footc">
+                <path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path>
+              </clipPath>
+            </defs>
+            <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#d5ac4e" clip-path="url(#footc)"></path>
+            <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#f3e7c4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+            <path d="M60 72 V98" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M44 100 H76" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+          </svg>
+          <span class="footer-logo-text">mysip<span>notes</span></span>
+        </div>
+        <div class="footer-links">
+          <a href="https://mysipnotes.com">Home</a>
+          <a href="https://blog.mysipnotes.com">Blog</a>
+          <a href="./privacy-policy.html">Privacy</a>
+        </div>
+        <div class="footer-copy">© 2026 mysipnotes · Made for the curious palate</div>
+      </div>
+    </footer>
+
+  </body>
 </html>

@@ -1,160 +1,775 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySipNotes - Your Photo-First Wine Journal</title>
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <script src="https://js.hsforms.net/forms/embed/46677337.js" defer></script>
-    <link rel="stylesheet" href="./styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mysipnotes — Every bottle, beautifully remembered.</title>
+  <style>
+    /* === FONTS === */
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/8c881309.woff2") format("woff2"); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/6f6c695e.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/f68e9523.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/c3696510.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/512c82ba.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/854eca9c.woff2") format("woff2"); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/52e97abf.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/ee1677a8.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/45959f46.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/80151509.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/9d740918.woff2") format("woff2"); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/8a3f95cd.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/db3dbbbf.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/8a0215e0.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/9d740918.woff2") format("woff2"); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/8a3f95cd.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/db3dbbbf.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/8a0215e0.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+    /* === BASE === */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Hanken Grotesk", sans-serif; color: #2b1410; background: #faf6ee; overflow-x: hidden; }
+
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* === NAV === */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(250,246,238,.82); backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ece1cc;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-brand-name { font-size: 22px; font-weight: 600; letter-spacing: -.02em; color: #45050c; }
+    .nav-brand-name em { font-style: normal; color: #8b6220; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { text-decoration: none; color: #5c4a3d; font-size: 15px; font-weight: 500; }
+    .nav-cta {
+      text-decoration: none; white-space: nowrap;
+      background: #720e07; color: #fbf3e6;
+      font-size: 15px; font-weight: 600;
+      padding: 10px 20px; border-radius: 999px;
+    }
+
+    /* === HERO === */
+    .hero {
+      position: relative;
+      padding: 84px 48px 96px;
+      background: radial-gradient(120% 100% at 80% 0%, #5c0f0a 0%, #45050c 48%, #2a0307 100%);
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; top: -80px; right: -60px;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(213,172,78,.18), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.05fr .95fr;
+      gap: 56px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; margin-bottom: 28px;
+      border: 1px solid rgba(238,207,109,.4); border-radius: 999px;
+    }
+    .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #eecf6d; }
+    .hero-badge-text { font-size: 13px; letter-spacing: .06em; color: #eecf6d; font-weight: 600; }
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600; font-size: 72px; line-height: 1.02;
+      letter-spacing: -.01em; color: #fbf3e6;
+      margin: 0 0 24px; text-wrap: balance;
+    }
+    .hero h1 em { font-style: italic; color: #eecf6d; }
+    .hero-sub { font-size: 19px; line-height: 1.55; color: #e6cdbf; max-width: 480px; margin: 0 0 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      background: #fbf3e6; color: #45050c;
+      padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 16px;
+    }
+    .btn-outline {
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: #fbf3e6;
+      padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 16px;
+      border: 1.5px solid rgba(251,243,230,.32);
+    }
+    .hero-social { display: flex; align-items: center; gap: 18px; margin-top: 28px; color: #c9a99a; font-size: 14px; }
+    .hero-stars { display: flex; gap: 2px; color: #eecf6d; }
+
+    /* phone mockup */
+    .phone-wrap { display: flex; justify-content: center; }
+    .phone-float { position: relative; width: 300px; animation: floaty 6s ease-in-out infinite; }
+    .phone-glow {
+      position: absolute; inset: -22px;
+      background: radial-gradient(circle at 50% 40%, rgba(238,207,109,.22), transparent 65%);
+      filter: blur(8px);
+    }
+    .phone-shell {
+      position: relative; background: #1c0c0a; border-radius: 46px; padding: 12px;
+      box-shadow: 0 40px 80px rgba(0,0,0,.45), inset 0 0 0 2px rgba(251,243,230,.06);
+    }
+    .phone-screen { background: #faf6ee; border-radius: 36px; overflow: hidden; height: 600px; position: relative; }
+    .phone-status {
+      position: absolute; top: 0; left: 0; right: 0; height: 50px; z-index: 3;
+      background: #faf6ee; display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 0 22px 6px; font-size: 13px; font-weight: 600; color: #2b1410;
+    }
+    .phone-status-icons { display: flex; gap: 5px; align-items: center; font-size: 11px; }
+    .phone-body { padding: 56px 18px 12px; }
+    .phone-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+    .phone-title { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 700; color: #45050c; white-space: nowrap; }
+    .phone-add {
+      width: 34px; height: 34px; border-radius: 50%; background: #720e07;
+      display: flex; align-items: center; justify-content: center;
+      color: #fbf3e6; font-size: 22px; font-weight: 400; line-height: 1;
+    }
+    .phone-count { font-size: 12px; color: #9c8a7c; margin-bottom: 14px; }
+    .phone-search {
+      background: #f0e9da; border-radius: 10px; height: 34px;
+      display: flex; align-items: center; padding: 0 12px; gap: 8px; margin-bottom: 16px;
+    }
+    .phone-search-text { font-size: 13px; color: #9c8a7c; }
+    .phone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wine-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(69,5,12,.08); }
+    .wine-card-art {
+      height: 116px; display: flex; align-items: center; justify-content: center;
+    }
+    .wine-card-art--red  { background: linear-gradient(160deg, #7a1410, #45050c); }
+    .wine-card-art--gold { background: linear-gradient(160deg, #c0913a, #8b6220); }
+    .wine-card-art--rose { background: linear-gradient(160deg, #6b1530, #420a1c); }
+    .wine-card-art--green { background: linear-gradient(160deg, #3a5a2a, #24380f); }
+    .wine-card-body { padding: 9px 10px 11px; }
+    .wine-card-name { font-size: 12.5px; font-weight: 600; color: #2b1410; line-height: 1.2; }
+    .wine-card-meta { font-size: 10.5px; color: #9c8a7c; margin-top: 2px; }
+    .wine-card-stars { font-size: 11px; color: #d5ac4e; margin-top: 4px; }
+    .wine-card-stars .dim { color: #e7ddcc; }
+
+    /* === STRIP === */
+    .strip {
+      background: #45050c; padding: 30px 48px;
+      border-top: 1px solid rgba(238,207,109,.12);
+    }
+    .strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 44px; flex-wrap: wrap; text-align: center;
+    }
+    .strip-phrase {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic; font-size: 24px; color: #eecf6d;
+    }
+    .strip-phrase--light { color: #f3e7c4; }
+    .strip-dot { color: #6e3a30; }
+
+    /* === HOW IT WORKS === */
+    .how { padding: 100px 48px; background: #faf6ee; }
+    .how-header { text-align: center; margin-bottom: 64px; }
+    .section-label {
+      font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
+      color: #b08a2e; font-weight: 700; margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600; font-size: 48px; line-height: 1.08;
+      color: #45050c; margin: 0; letter-spacing: -.01em;
+    }
+    .how-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .step-card {
+      background: #fff; border-radius: 20px; padding: 40px 34px;
+      box-shadow: 0 1px 3px rgba(69,5,12,.06); border: 1px solid #f0e7d6;
+    }
+    .step-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+    .step-icon {
+      flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: #fbeede;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px; font-weight: 600; color: #e0d3bb; line-height: 1;
+    }
+    .step-card h3 { font-size: 21px; font-weight: 600; color: #2b1410; margin: 0 0 10px; }
+    .step-card p { font-size: 15.5px; line-height: 1.6; color: #6f5a4b; margin: 0; }
+
+    /* === PHOTO-FIRST === */
+    .photo-first { padding: 90px 48px; background: #f3ead9; }
+    .photo-first-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .photo-first .section-label { margin-bottom: 16px; }
+    .photo-first h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600; font-size: 44px; line-height: 1.1;
+      color: #45050c; margin: 0 0 20px; letter-spacing: -.01em;
+    }
+    .photo-first p { font-size: 17px; line-height: 1.62; color: #5c4a3d; margin: 0 0 24px; }
+    .feature-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+    .feature-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; color: #2b1410; }
+    .feature-list .check { color: #720e07; font-weight: 700; }
+    .label-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .label-tile {
+      aspect-ratio: 3/4; border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(69,5,12,.16);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .label-tile--r1 { background: linear-gradient(165deg, #7a1410, #45050c); transform: rotate(-2deg); }
+    .label-tile--au { background: linear-gradient(165deg, #c0913a, #8b6220); margin-top: 18px; }
+    .label-tile--ro { background: linear-gradient(165deg, #6b1530, #420a1c); transform: rotate(2deg); }
+    .label-tile--gr { background: linear-gradient(165deg, #3a5a2a, #24380f); transform: rotate(2deg); }
+    .label-tile--r2 { background: linear-gradient(165deg, #8a2c12, #4f1407); margin-top: 18px; }
+    .label-tile--r3 { background: linear-gradient(165deg, #5c0f0a, #2a0307); transform: rotate(-2deg); }
+    .label-dot { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #eecf6d; }
+    .label-tile--au .label-dot { border-color: #45050c; }
+    .label-tile--r3 .label-dot { border-color: #d5ac4e; }
+
+    /* === FEATURE GRID === */
+    .features { padding: 96px 48px; background: #faf6ee; }
+    .features-inner { max-width: 1180px; margin: 0 auto; }
+    .features-header { margin-bottom: 52px; max-width: 640px; }
+    .features-header h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600; font-size: 44px; line-height: 1.1;
+      color: #45050c; margin: 0 0 14px; letter-spacing: -.01em;
+    }
+    .features-header p { font-size: 17px; line-height: 1.6; color: #6f5a4b; margin: 0; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .feature-card {
+      background: #fff; border-radius: 18px; padding: 34px;
+      border: 1px solid #f0e7d6; display: flex; gap: 20px; align-items: flex-start;
+    }
+    .feature-icon {
+      flex-shrink: 0; width: 46px; height: 46px; border-radius: 12px; background: #45050c;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-card h3 { font-size: 19px; font-weight: 600; color: #2b1410; margin: 0 0 7px; }
+    .feature-card p { font-size: 15px; line-height: 1.55; color: #6f5a4b; margin: 0; }
+
+    /* === PRICING === */
+    .pricing {
+      padding: 100px 48px;
+      background: radial-gradient(120% 100% at 20% 0%, #5c0f0a 0%, #45050c 55%, #2a0307 100%);
+    }
+    .pricing-header { text-align: center; margin-bottom: 56px; }
+    .pricing-header .section-label { color: #eecf6d; }
+    .pricing-header .section-title { color: #fbf3e6; }
+    .pricing-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .price-card {
+      background: rgba(251,243,230,.06);
+      border: 1px solid rgba(238,207,109,.2);
+      border-radius: 22px; padding: 40px;
+    }
+    .price-card--premium { background: #fbf3e6; box-shadow: 0 30px 60px rgba(0,0,0,.35); position: relative; }
+    .price-tier { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: #c9a99a; font-weight: 600; }
+    .price-card--premium .price-tier { color: #b08a2e; }
+    .price-amount { display: flex; align-items: baseline; gap: 6px; margin: 16px 0 6px; }
+    .price-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 56px; font-weight: 600; color: #fbf3e6;
+    }
+    .price-card--premium .price-num { color: #45050c; }
+    .price-period { color: #c9a99a; font-size: 16px; }
+    .price-card--premium .price-period { color: #8b6220; }
+    .price-desc { color: #e6cdbf; font-size: 15px; margin: 0 0 26px; }
+    .price-card--premium .price-desc { color: #6f5a4b; }
+    .price-divider { height: 1px; background: rgba(238,207,109,.15); margin-bottom: 24px; }
+    .price-card--premium .price-divider { background: #e7ddcc; }
+    .price-features { list-style: none; padding: 0; margin: 0 0 30px; display: flex; flex-direction: column; gap: 13px; }
+    .price-features li { color: #f3e7c4; font-size: 15.5px; display: flex; gap: 10px; }
+    .price-card--premium .price-features li { color: #2b1410; }
+    .price-features .check { color: #eecf6d; }
+    .price-card--premium .price-features .check { color: #720e07; }
+    .price-badge {
+      position: absolute; top: 26px; right: 26px;
+      background: #720e07; color: #fbf3e6;
+      font-size: 12px; font-weight: 700; letter-spacing: .06em;
+      padding: 6px 12px; border-radius: 999px;
+    }
+    .btn-price {
+      display: block; text-align: center; text-decoration: none;
+      border: 1.5px solid rgba(251,243,230,.4); color: #fbf3e6;
+      padding: 14px; border-radius: 12px; font-weight: 600; font-size: 16px;
+    }
+    .btn-price--premium {
+      background: #720e07; color: #fbf3e6; border-color: transparent;
+    }
+
+    /* === CTA === */
+    .cta { padding: 110px 48px; background: #faf6ee; text-align: center; }
+    .cta-inner { max-width: 720px; margin: 0 auto; }
+    .cta svg { margin-bottom: 26px; }
+    .cta h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600; font-size: 52px; line-height: 1.05;
+      color: #45050c; margin: 0 0 20px; letter-spacing: -.01em;
+    }
+    .cta p { font-size: 18px; line-height: 1.55; color: #6f5a4b; margin: 0 0 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-red {
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      background: #720e07; color: #fbf3e6;
+      padding: 15px 28px; border-radius: 12px; font-weight: 600; font-size: 16px;
+    }
+    .btn-dark {
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      background: #45050c; color: #fbf3e6;
+      padding: 15px 28px; border-radius: 12px; font-weight: 600; font-size: 16px;
+    }
+
+    /* === FOOTER === */
+    .footer { background: #2a0307; padding: 52px 48px; color: #c9a99a; }
+    .footer-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 11px; }
+    .footer-brand-name { font-size: 19px; font-weight: 600; color: #f3e7c4; }
+    .footer-brand-name em { font-style: normal; color: #d5ac4e; }
+    .footer-links { display: flex; gap: 28px; font-size: 14px; }
+    .footer-links a { color: #c9a99a; text-decoration: none; }
+    .footer-copy { font-size: 13px; color: #7a4a3e; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 960px) {
+      .nav { padding: 14px 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+
+      .hero { padding: 56px 24px 64px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 52px; }
+      .phone-wrap { display: none; }
+
+      .strip { padding: 24px; }
+      .strip-inner { gap: 20px; }
+
+      .how { padding: 72px 24px; }
+      .how-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .photo-first { padding: 72px 24px; }
+      .photo-first-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .features { padding: 72px 24px; }
+      .feature-grid { grid-template-columns: 1fr; }
+
+      .pricing { padding: 72px 24px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+
+      .cta { padding: 80px 24px; }
+      .cta h2 { font-size: 40px; }
+
+      .footer { padding: 40px 24px; }
+    }
+
+    @media (max-width: 540px) {
+      .hero h1 { font-size: 40px; }
+      .section-title { font-size: 36px; }
+      .hero-btns { flex-direction: column; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .strip-phrase { font-size: 20px; }
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <a href="https://mysipnotes.com">
-                        <img class="logo" src="./images/pour-lockup.svg" alt="MySipNotes" />
-                    </a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522 150" width="139" height="40">
+        <g transform="translate(8,14) scale(1.04)">
+          <defs>
+            <clipPath id="g">
+              <path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path>
+            </clipPath>
+          </defs>
+          <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#720e07" clip-path="url(#g)"></path>
+          <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#45050c" stroke-width="6"
+            stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="M60 72 V98" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+          <path d="M44 100 H76" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+        </g>
+        <g transform="translate(-38,0)">
+          <path fill="#45050c" fill-rule="evenodd"
+            d="M284.47 49.77L284.23 57.93L284.93 58.63L293.10 58.40L293.10 50.00L284.93 49.77ZM178.07 63.30L177.60 63.77L176.20 63.77L175.73 64.23L173.87 64.70L170.60 67.97L170.37 64.47L169.67 63.77L162.67 63.77L161.97 64.47L161.97 98.07L162.67 98.77L170.37 98.53L170.37 77.07L170.83 76.60L170.83 75.20L171.77 73.33L173.87 71.23L175.73 70.77L176.20 70.30L178.53 70.30L179.00 70.77L179.93 70.77L182.03 72.87L182.97 74.73L182.97 76.60L183.43 77.07L183.67 98.77L191.37 98.53L191.37 77.53L191.83 77.07L191.83 75.67L192.30 75.20L192.77 73.33L194.87 71.23L196.73 70.77L197.20 70.30L199.53 70.30L200.00 70.77L200.93 70.77L203.03 72.87L203.97 74.73L203.97 76.13L204.43 76.60L204.43 98.53L212.37 98.53L212.37 74.27L211.90 73.80L211.43 70.53L210.03 68.20L206.53 64.70L204.67 64.23L204.20 63.77L202.80 63.77L202.33 63.30L198.60 63.30L198.13 63.77L196.27 63.77L195.80 64.23L194.87 64.23L192.53 65.63L189.73 68.43L187.40 65.63L186.00 65.17L185.07 64.23L184.13 64.23L183.67 63.77L181.80 63.77L181.33 63.30L178.53 63.30ZM262.53 63.30L262.07 63.77L260.20 63.77L256.93 65.17L253.90 67.73L253.90 68.20L252.97 69.13L252.97 70.07L252.50 70.53L252.50 72.40L252.03 72.87L252.50 76.60L253.43 78.47L256.00 81.03L259.73 82.90L261.13 82.90L261.60 83.37L262.53 83.37L265.80 84.77L267.20 84.77L269.07 85.70L271.17 87.80L271.17 89.67L269.53 91.77L267.67 92.70L263.00 92.70L259.73 91.30L256.00 87.57L255.53 87.57L250.63 92.00L250.63 92.47L256.00 97.37L256.93 97.37L258.33 98.30L261.13 98.77L261.60 99.23L269.07 99.23L274.67 96.90L277.70 93.87L278.63 92.00L278.63 90.60L279.10 90.13L279.10 85.93L278.63 85.47L278.17 83.13L276.53 81.03L276.07 81.03L274.67 79.63L272.80 78.70L271.87 78.70L270.47 77.77L269.07 77.77L268.60 77.30L267.20 77.30L265.33 76.37L262.53 75.90L261.60 75.43L259.50 72.87L259.97 71.47L261.13 70.30L262.07 70.30L262.53 69.83L264.40 69.83L264.87 69.37L265.33 69.83L267.67 69.83L270.93 71.70L272.33 73.57L273.27 73.57L277.70 70.07L277.23 68.67L274.67 66.10L272.33 64.70L271.40 64.70L269.53 63.77L267.67 63.77L267.20 63.30L263.00 63.30ZM316.67 63.30L316.20 63.77L314.33 63.77L311.07 65.17L308.27 67.97L307.80 63.77L300.80 63.77L300.10 64.47L300.33 113.23L308.03 113.00L308.27 94.57L312.47 98.30L313.40 98.30L315.27 99.23L321.33 99.23L321.80 98.77L323.20 98.77L327.87 95.97L330.43 92.93L332.30 89.20L332.30 88.27L332.77 87.80L332.77 85.93L333.23 85.47L333.23 77.07L332.77 76.60L332.77 75.20L332.30 74.73L332.30 73.80L330.90 70.53L326.47 65.63L322.73 63.77L320.87 63.77L320.40 63.30L317.13 63.30ZM215.87 63.77L215.17 64.47L215.63 64.93L215.63 65.87L216.57 67.27L216.57 68.20L217.50 69.60L218.43 72.87L219.83 75.20L219.83 76.13L220.77 77.53L220.77 78.47L221.70 79.87L222.63 83.13L224.03 85.47L224.03 86.40L224.97 87.80L224.97 88.73L225.90 90.13L226.83 93.40L228.23 95.73L228.23 96.67L227.30 98.07L226.37 101.33L224.97 103.67L224.03 106.93L221.70 111.60L221.93 112.77L229.87 112.77L230.57 112.07L231.03 110.20L231.97 108.80L231.97 107.87L232.90 106.47L232.90 105.53L234.30 103.20L234.30 102.27L235.23 100.87L235.23 99.93L237.10 96.20L237.10 95.27L238.03 93.87L238.03 92.93L239.43 90.60L239.43 89.67L240.37 88.27L240.37 87.33L241.30 85.93L241.30 85.00L243.17 81.27L243.17 80.33L244.57 78.00L244.57 77.07L245.50 75.67L245.50 74.73L246.43 73.33L247.37 70.07L249.70 65.40L249.70 64.00L241.30 64.00L232.67 87.57L231.97 86.87L231.50 84.53L230.57 83.13L229.17 78.00L228.23 76.60L226.83 71.47L225.90 70.07L225.90 69.13L225.43 68.67L225.43 67.73L224.03 64.47L223.33 63.77L216.33 63.77ZM285.40 63.77L284.70 64.47L284.93 98.77L292.63 98.53L292.63 64.00L285.87 63.77ZM314.80 70.77L314.33 71.23L312.00 71.70L308.97 74.73L307.57 78.00L307.57 84.53L308.03 85.00L308.50 87.33L311.07 90.37L311.53 90.37L312.47 91.30L313.40 91.30L313.87 91.77L315.73 91.77L316.20 92.23L317.13 91.77L319.00 91.77L320.87 90.83L323.43 88.27L323.43 87.80L324.37 86.87L324.83 84.07L325.30 83.60L325.30 79.40L324.83 78.93L324.83 77.53L324.37 77.07L323.90 75.20L321.33 72.17L318.07 70.77L315.27 70.77Z">
+          </path>
+          <path fill="#8b6220" fill-rule="evenodd"
+            d="M425.40 51.17L417.70 55.60L417.47 63.77L411.87 63.77L411.17 64.47L411.40 70.30L417.70 70.53L417.70 92.00L418.17 92.47L418.63 94.80L420.03 96.20L420.03 96.67L422.13 98.30L423.07 98.30L424.93 99.23L431.00 99.23L431.47 98.77L432.87 98.77L433.57 98.07L433.57 92.47L431.93 92.23L431.47 92.70L428.20 92.70L426.57 91.07L426.10 90.13L426.10 88.73L425.63 88.27L425.63 70.53L433.57 70.07L433.57 64.47L432.87 63.77L425.63 63.53L425.63 51.40ZM355.40 63.30L354.93 63.77L353.53 63.77L350.27 65.17L348.87 66.57L348.40 66.57L347.47 67.97L347.23 64.47L346.53 63.77L339.53 63.77L338.83 64.47L338.83 98.07L339.53 98.77L347.23 98.53L347.23 78.00L347.70 77.53L347.70 75.67L348.63 73.80L351.20 71.23L353.07 70.77L353.53 70.30L356.33 70.30L356.80 70.77L358.67 71.23L360.30 72.87L361.23 74.73L361.23 76.13L361.70 76.60L361.70 98.53L369.63 98.53L369.63 73.33L369.17 72.87L369.17 71.00L367.77 68.20L364.73 65.17L361.47 63.77L359.60 63.77L359.13 63.30L355.87 63.30ZM389.93 63.30L389.47 63.77L387.60 63.77L387.13 64.23L386.20 64.23L382.47 66.10L380.60 67.97L380.13 67.97L379.90 68.67L378.03 70.53L376.17 74.27L376.17 75.20L375.70 75.67L375.70 77.53L375.23 78.00L375.23 85.00L375.70 85.47L375.70 86.87L376.17 87.33L377.10 90.60L378.03 91.53L378.97 93.40L381.53 95.97L385.73 98.30L388.53 98.77L389.00 99.23L396.00 99.23L396.47 98.77L399.27 98.30L402.53 96.43L407.43 91.07L408.37 89.20L408.83 86.87L409.30 86.40L409.30 84.07L409.77 83.60L409.77 78.93L409.30 78.47L408.83 74.73L406.03 69.60L403.00 66.57L398.80 64.23L397.87 64.23L397.40 63.77L395.53 63.77L395.07 63.30L390.40 63.30ZM450.13 63.30L449.67 63.77L447.80 63.77L447.33 64.23L446.40 64.23L441.97 66.80L441.97 67.27L438.70 71.00L437.77 72.87L437.77 73.80L436.83 75.67L436.83 77.53L436.37 78.00L436.37 85.47L436.83 85.93L436.83 87.33L437.30 87.80L437.30 88.73L438.70 92.00L442.67 96.43L445.93 98.30L448.73 98.77L449.20 99.23L457.13 99.23L457.60 98.77L460.87 98.30L465.07 95.97L467.17 93.87L467.17 93.40L463.20 88.50L462.73 88.50L459.93 90.83L458.07 91.30L457.60 91.77L456.20 91.77L455.73 92.23L451.53 92.23L451.07 91.77L449.67 91.77L447.33 90.37L445.70 88.73L444.30 85.47L444.30 84.53L445.00 83.83L467.87 83.83L468.57 82.67L468.57 79.40L468.10 78.93L467.63 73.80L464.83 68.67L462.27 66.10L460.87 65.63L459.93 64.70L459.00 64.70L457.13 63.77L454.80 63.77L454.33 63.30L450.60 63.30ZM483.27 63.30L482.80 63.77L480.93 63.77L479.53 64.70L478.60 64.70L474.17 68.67L473.70 70.53L473.23 71.00L473.23 75.67L473.70 76.13L473.70 77.07L475.10 79.40L478.60 81.97L479.53 81.97L480.93 82.90L481.87 82.90L483.73 83.83L485.13 83.83L485.60 84.30L489.33 85.23L491.90 87.33L492.37 89.20L490.27 91.77L488.40 92.70L483.73 92.70L483.27 92.23L481.40 91.77L480.00 90.37L479.53 90.37L477.20 87.57L476.27 87.57L471.37 92.00L471.83 92.93L476.27 96.90L479.07 98.30L481.87 98.77L482.33 99.23L489.80 99.23L490.27 98.77L493.07 98.30L497.03 95.73L497.03 95.27L498.90 93.40L499.37 91.53L499.83 91.07L499.83 85.00L498.43 82.20L496.33 80.10L492.60 78.23L483.73 75.90L481.87 74.97L480.70 73.80L480.70 71.93L482.33 70.30L483.27 69.83L485.13 69.83L485.60 69.37L486.07 69.83L488.40 69.83L488.87 70.30L489.80 70.30L493.53 73.57L494.47 73.57L498.43 70.07L498.43 69.13L494.93 65.63L492.13 64.23L491.20 64.23L490.73 63.77L488.87 63.77L488.40 63.30L483.73 63.30ZM391.80 70.30L391.33 70.77L389.47 70.77L387.60 71.70L384.10 75.67L383.63 78.47L383.17 78.93L383.17 83.60L383.63 84.07L383.63 85.47L384.10 85.93L384.57 87.80L387.13 90.83L390.40 92.23L394.13 92.23L394.60 91.77L396.93 91.30L399.97 88.27L401.37 85.00L401.37 82.20L401.83 81.73L401.83 80.80L401.37 80.33L401.37 77.53L399.97 74.27L397.40 71.70L395.53 70.77L393.67 70.77L393.20 70.30L392.27 70.30ZM450.13 70.30L446.87 72.17L445.23 74.27L444.77 76.13L444.30 76.60L444.53 78.23L460.63 78.00L460.63 75.67L458.53 72.17L455.27 70.30L450.60 70.30Z">
+          </path>
+        </g>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#get" class="nav-cta">Get the app</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span class="hero-badge-text">NOW IN PRIVATE BETA</span>
+        </div>
+        <h1>Every bottle,<br>beautifully<br><em>remembered.</em></h1>
+        <p class="hero-sub">Snap a photo of any wine label and the details fill themselves in. mysipnotes is the quiet, photo-first way to remember every wine you've loved — no typing, no marketplace, no feed.</p>
+        <div class="hero-btns" id="get">
+          <a href="#" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#45050c"><path d="M17.05 12.5c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.69 2.36 2.89 2.31 1.16-.05 1.6-.75 3-.75 1.39 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.69zM14.77 5.3c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.39-.59.69-1.11 1.8-.97 2.85 1.03.08 2.08-.52 2.72-1.31z"></path></svg>
+            Download for iOS
+          </a>
+          <a href="#" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbf3e6"><path d="M3.6 2.4c-.3.3-.5.7-.5 1.2v16.8c0 .5.2.9.5 1.2l9-9.6-9-9.6zm12 6.3l-2.5 2.6 2.5 2.6 3-1.7c.9-.5.9-1.3 0-1.8l-3-1.7zm-1.5-.9L5.4 2.6 14 11.2l.1-.1zm0 5.4L5.4 21.4 14 12.8l.1.1z"></path></svg>
+            Download for Android
+          </a>
+        </div>
+        <div class="hero-social">
+          <div class="hero-stars">★★★★★</div>
+          <span>Loved by early tasters · Private by default</span>
+        </div>
+      </div>
+
+      <!-- phone mockup -->
+      <div class="phone-wrap">
+        <div class="phone-float">
+          <div class="phone-glow"></div>
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-status">
+                <span>9:41</span>
+                <span class="phone-status-icons"><span>●●●</span><span>100%</span></span>
+              </div>
+              <div class="phone-body">
+                <div class="phone-header">
+                  <span class="phone-title">My Wines</span>
+                  <span class="phone-add">+</span>
                 </div>
-                <nav>
-                    <a href="https://blog.mysipnotes.com">Blog</a>
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Snap a Photo. Remember Every Bottle.</h1>
-            <p class="tagline">The photo-first wine journal</p>
-            <p>MySipNotes turns a quick photo of any wine label into a complete tasting record. Smart label
-                recognition fills in the details—name, producer, vintage, region—so you can focus on the rating,
-                tasting notes, and memories that matter.</p>
-            <div class="hubspot-form-container">
-                <div class="hs-form-frame" data-region="na1" data-form-id="23ebbbcd-6a33-4b9a-ab1f-fa2755d020b3"
-                    data-portal-id="46677337"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="container">
-            <h2>What is MySipNotes?</h2>
-            <div class="about-content">
-                <p>MySipNotes is your personal wine companion that makes capturing and remembering wine effortless.
-                    Snap a photo at a winery, restaurant, wine shop, or home—front and back label—and let MySipNotes
-                    do the heavy lifting while your collection grows itself.</p>
-
-                <div class="features-list">
-                    <div class="feature">
-                        <div class="feature-icon">📸</div>
-                        <h3>Photo-First Capture</h3>
-                        <p>Snap a label and you're done. Add a back-label photo too, then zoom in anytime to read the
-                            fine print</p>
+                <div class="phone-count">62 of 100 bottles</div>
+                <div class="phone-search">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9c8a7c" stroke-width="2.4"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4" stroke-linecap="round"></path></svg>
+                  <span class="phone-search-text">Search your cellar</span>
+                </div>
+                <div class="phone-grid">
+                  <div class="wine-card">
+                    <div class="wine-card-art wine-card-art--red">
+                      <svg width="42" height="42" viewBox="0 0 120 120" fill="none">
+                        <defs><clipPath id="p1"><path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path></clipPath></defs>
+                        <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#d5ac4e" clip-path="url(#p1)"></path>
+                        <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#f3e7c4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path d="M60 72 V98" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M44 100 H76" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                      </svg>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">✨</div>
-                        <h3>Smart Label Recognition</h3>
-                        <p>Wine name, producer, vintage, and region are extracted automatically—just review and edit
-                            if needed</p>
+                    <div class="wine-card-body">
+                      <div class="wine-card-name">Château Margaux</div>
+                      <div class="wine-card-meta">2018 · Bordeaux</div>
+                      <div class="wine-card-stars">★★★★★</div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔍</div>
-                        <h3>Searchable Archive</h3>
-                        <p>Find any bottle by varietal, region, rating, price, or the place you tasted it</p>
+                  </div>
+                  <div class="wine-card">
+                    <div class="wine-card-art wine-card-art--gold">
+                      <svg width="42" height="42" viewBox="0 0 120 120" fill="none">
+                        <defs><clipPath id="p2"><path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path></clipPath></defs>
+                        <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#45050c" clip-path="url(#p2)"></path>
+                        <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#fff7e6" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path d="M60 72 V98" stroke="#fff7e6" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M44 100 H76" stroke="#fff7e6" stroke-width="6" stroke-linecap="round"></path>
+                      </svg>
                     </div>
+                    <div class="wine-card-body">
+                      <div class="wine-card-name">Cloudy Bay</div>
+                      <div class="wine-card-meta">2022 · Marlborough</div>
+                      <div class="wine-card-stars">★★★★<span class="dim">★</span></div>
+                    </div>
+                  </div>
+                  <div class="wine-card">
+                    <div class="wine-card-art wine-card-art--rose">
+                      <svg width="42" height="42" viewBox="0 0 120 120" fill="none">
+                        <defs><clipPath id="p3"><path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path></clipPath></defs>
+                        <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#eecf6d" clip-path="url(#p3)"></path>
+                        <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#f3e7c4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path d="M60 72 V98" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M44 100 H76" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                      </svg>
+                    </div>
+                    <div class="wine-card-body">
+                      <div class="wine-card-name">Whispering Angel</div>
+                      <div class="wine-card-meta">2021 · Provence</div>
+                      <div class="wine-card-stars">★★★★<span class="dim">★</span></div>
+                    </div>
+                  </div>
+                  <div class="wine-card">
+                    <div class="wine-card-art wine-card-art--green">
+                      <svg width="42" height="42" viewBox="0 0 120 120" fill="none">
+                        <defs><clipPath id="p4"><path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path></clipPath></defs>
+                        <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#d5ac4e" clip-path="url(#p4)"></path>
+                        <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#f3e7c4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path d="M60 72 V98" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M44 100 H76" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+                      </svg>
+                    </div>
+                    <div class="wine-card-body">
+                      <div class="wine-card-name">Cakebread Cellars</div>
+                      <div class="wine-card-meta">2019 · Napa Valley</div>
+                      <div class="wine-card-stars">★★★★★</div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <section class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Snap a Photo</h3>
-                    <p>Take a picture of the label—front and back—right from the app or your camera roll</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Let MySipNotes Fill It In</h3>
-                    <p>Smart label recognition extracts the wine name, producer, vintage, and region automatically</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Add Your Notes & Rating</h3>
-                    <p>Rate it, jot down tasting notes, add the price, and note where and who you shared it with</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Build Your Collection</h3>
-                    <p>Every bottle is saved with photos, notes, and location—searchable anytime</p>
-                </div>
-            </div>
+  <!-- STRIP -->
+  <section class="strip">
+    <div class="strip-inner">
+      <span class="strip-phrase">Not a marketplace.</span>
+      <span class="strip-dot">·</span>
+      <span class="strip-phrase">Not a feed.</span>
+      <span class="strip-dot">·</span>
+      <span class="strip-phrase strip-phrase--light">Just your wines, kept close.</span>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="how-header">
+      <div class="section-label">Three taps, start to finish</div>
+      <h2 class="section-title">The label does the typing for you</h2>
+    </div>
+    <div class="how-grid">
+      <div class="step-card">
+        <div class="step-head">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#720e07" stroke-width="1.8">
+              <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6a1 1 0 0 1 .84-.46h5a1 1 0 0 1 .84.46l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"></path>
+              <circle cx="12" cy="12" r="3.4"></circle>
+            </svg>
+          </div>
+          <span class="step-num">01</span>
         </div>
-    </section>
-
-    <section class="screenshots">
-        <div class="container">
-            <h2>See MySipNotes in Action</h2>
-            <div class="screenshot-grid">
-                <div class="screenshot-placeholder">
-                    <img class="screenshot" src="./images/home-screen.png"/>
-                </div>
-                <div class="screenshot-placeholder">
-                    <img class="screenshot" src="./images/blind-flow.png" />
-                </div>
-                <div class="screenshot-placeholder">
-                <img class="screenshot" src="./images/select-region.png" />
-                </div>
-            </div>
+        <h3>Snap the label</h3>
+        <p>Point your camera and tap once. Front and back, at the winery or across the dinner table — it takes a second.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-head">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#720e07" stroke-width="1.8">
+              <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke-linecap="round"></path>
+              <circle cx="12" cy="12" r="3.2"></circle>
+            </svg>
+          </div>
+          <span class="step-num">02</span>
         </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Wine Lovers Are Saying</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"I'm using MySipNotes as an archive for all the wines I've been tasting. It's awesome to have them all in one place!"</p>
-                    <p class="testimonial-author">Katie L.</p>
-                    <p class="testimonial-role">Wine enjoyer</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Love the structured assessment."</p>
-                    <p class="testimonial-author">Krista G.</p>
-                    <p class="testimonial-role">WSET Diploma Student</p>
-                </div>
-            </div>
+        <h3>Let it read</h3>
+        <p>Label recognition pulls the name, producer, vintage, and region automatically — and waits for you to correct anything it missed.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-head">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#720e07" stroke-width="1.8" stroke-linejoin="round">
+              <path d="M12 4l2.3 4.9 5.2.7-3.8 3.6 1 5.3L12 16.9 7.3 18.5l1-5.3L4.5 9.6l5.2-.7z"></path>
+            </svg>
+          </div>
+          <span class="step-num">03</span>
         </div>
-    </section>
+        <h3>Make it yours</h3>
+        <p>Add a rating, the price, a few words on the finish, and who you shared it with. Saved to your private cellar in seconds.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="final-cta">
-        <div class="container">
-            <h2>Never Lose Track of a Great Bottle Again</h2>
-            <p>Join the waitlist and be among the first to experience MySipNotes when it launches.</p>
-            <div class="hubspot-form-container">
-                <div class="hs-form-frame" data-region="na1" data-form-id="23ebbbcd-6a33-4b9a-ab1f-fa2755d020b3"
-                    data-portal-id="46677337"></div>
-            </div>
+  <!-- PHOTO-FIRST -->
+  <section class="photo-first" id="features">
+    <div class="photo-first-inner">
+      <div>
+        <div class="section-label">Photography-first</div>
+        <h2>A wall of labels, not a spreadsheet</h2>
+        <p>Your collection looks like the wines themselves — large, beautiful label photos you can scroll through like a photo album. The bottle you can't quite name is the one you can always picture.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> Front &amp; back labels, pinch to zoom for the fine print</li>
+          <li><span class="check">✓</span> Date, place, and occasion captured from the photo itself</li>
+          <li><span class="check">✓</span> Works offline — log a tasting room with no signal, sync later</li>
+        </ul>
+      </div>
+      <div class="label-gallery">
+        <div class="label-tile label-tile--r1"><div class="label-dot"></div></div>
+        <div class="label-tile label-tile--au"><div class="label-dot"></div></div>
+        <div class="label-tile label-tile--ro"><div class="label-dot"></div></div>
+        <div class="label-tile label-tile--gr"><div class="label-dot"></div></div>
+        <div class="label-tile label-tile--r2"><div class="label-dot"></div></div>
+        <div class="label-tile label-tile--r3"><div class="label-dot"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID -->
+  <section class="features">
+    <div class="features-inner">
+      <div class="features-header">
+        <h2>Quietly thorough, never demanding</h2>
+        <p>Everything a serious taster wants to remember, captured with the lightest possible touch.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#eecf6d" stroke-width="1.8">
+              <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+              <path d="M9 12.5l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Private by default</h3>
+            <p>Every bottle is yours alone. No public profile, no follower count — share a single tasting note only if and when you choose to.</p>
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> NorthVine Consulting. All rights reserved.</p>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#eecf6d" stroke-width="1.8">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M21 21l-4-4" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Find anything in seconds</h3>
+            <p>Search by producer, varietal, region, rating, or price. "All the Pinot under $30" is one tap away when you're planning dinner.</p>
+          </div>
         </div>
-    </footer>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#eecf6d" stroke-width="1.8">
+              <path d="M12 21s-7-5.2-7-10a7 7 0 0 1 14 0c0 4.8-7 10-7 10z"></path>
+              <circle cx="12" cy="11" r="2.6"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3>Remembers the moment</h3>
+            <p>The winery, the restaurant, the night in — location and date come straight from the photo, with the people you shared it with one tap away.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#eecf6d" stroke-width="1.8" stroke-linecap="round">
+              <path d="M5 19V5a1 1 0 0 1 1-1h9l4 4v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"></path>
+              <path d="M9 13h6M9 16.5h4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Notes in your own words</h3>
+            <p>Aroma, flavor, finish — or just "perfect with the lamb." No rigid forms. Write as little or as much as the bottle deserves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-header">
+      <div class="section-label">Simple, honest pricing</div>
+      <h2 class="section-title">Start free. Upgrade when your cellar grows.</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Free</div>
+        <div class="price-amount">
+          <span class="price-num">$0</span>
+          <span class="price-period">forever</span>
+        </div>
+        <p class="price-desc">Everything you need to start remembering.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Up to 100 wines</li>
+          <li><span class="check">✓</span> Photo capture &amp; label recognition</li>
+          <li><span class="check">✓</span> Search, filter &amp; tasting notes</li>
+          <li><span class="check">✓</span> Private cloud sync across devices</li>
+        </ul>
+        <a href="#get" class="btn-price">Get started free</a>
+      </div>
+      <div class="price-card price-card--premium">
+        <div class="price-badge">UNLIMITED</div>
+        <div class="price-tier">Premium</div>
+        <div class="price-amount">
+          <span class="price-num">$2.99</span>
+          <span class="price-period">/ month</span>
+        </div>
+        <p class="price-desc">Or $24.99/year — for the serious collection.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> <strong>Unlimited</strong> wines</li>
+          <li><span class="check">✓</span> Map view of every place you've tasted</li>
+          <li><span class="check">✓</span> Collection analytics &amp; trends</li>
+          <li><span class="check">✓</span> Shareable tasting cards &amp; export</li>
+        </ul>
+        <a href="#get" class="btn-price btn-price--premium">Go Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner">
+      <svg width="56" height="56" viewBox="0 0 120 120" fill="none">
+        <defs><clipPath id="ctac"><path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path></clipPath></defs>
+        <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#720e07" clip-path="url(#ctac)"></path>
+        <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#45050c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+        <path d="M60 72 V98" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+        <path d="M44 100 H76" stroke="#45050c" stroke-width="6" stroke-linecap="round"></path>
+      </svg>
+      <h2>For people who'd rather<br>taste than type.</h2>
+      <p>Begin your cellar today. The first hundred bottles are on us.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-red">Download for iOS</a>
+        <a href="#" class="btn-dark">Download for Android</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522 150" width="139" height="40">
+          <g transform="translate(8,14) scale(1.04)">
+            <defs>
+              <clipPath id="footg">
+                <path d="M43 27 C 38 50, 46 65, 60 67 C 74 65, 82 50, 77 27 Z"></path>
+              </clipPath>
+            </defs>
+            <path d="M28 40 Q60 51 92 29 L92 82 L28 82 Z" fill="#d5ac4e" clip-path="url(#footg)"></path>
+            <path d="M38 22 C 33 50, 42 70, 60 72 C 78 70, 87 50, 82 22" fill="none" stroke="#f3e7c4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+            <path d="M60 72 V98" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M44 100 H76" stroke="#f3e7c4" stroke-width="6" stroke-linecap="round"></path>
+          </g>
+          <g transform="translate(-38,0)">
+            <path fill="#f3e7c4" fill-rule="evenodd"
+              d="M284.47 49.77L284.23 57.93L284.93 58.63L293.10 58.40L293.10 50.00L284.93 49.77ZM178.07 63.30L177.60 63.77L176.20 63.77L175.73 64.23L173.87 64.70L170.60 67.97L170.37 64.47L169.67 63.77L162.67 63.77L161.97 64.47L161.97 98.07L162.67 98.77L170.37 98.53L170.37 77.07L170.83 76.60L170.83 75.20L171.77 73.33L173.87 71.23L175.73 70.77L176.20 70.30L178.53 70.30L179.00 70.77L179.93 70.77L182.03 72.87L182.97 74.73L182.97 76.60L183.43 77.07L183.67 98.77L191.37 98.53L191.37 77.53L191.83 77.07L191.83 75.67L192.30 75.20L192.77 73.33L194.87 71.23L196.73 70.77L197.20 70.30L199.53 70.30L200.00 70.77L200.93 70.77L203.03 72.87L203.97 74.73L203.97 76.13L204.43 76.60L204.43 98.53L212.37 98.53L212.37 74.27L211.90 73.80L211.43 70.53L210.03 68.20L206.53 64.70L204.67 64.23L204.20 63.77L202.80 63.77L202.33 63.30L198.60 63.30L198.13 63.77L196.27 63.77L195.80 64.23L194.87 64.23L192.53 65.63L189.73 68.43L187.40 65.63L186.00 65.17L185.07 64.23L184.13 64.23L183.67 63.77L181.80 63.77L181.33 63.30L178.53 63.30ZM262.53 63.30L262.07 63.77L260.20 63.77L256.93 65.17L253.90 67.73L253.90 68.20L252.97 69.13L252.97 70.07L252.50 70.53L252.50 72.40L252.03 72.87L252.50 76.60L253.43 78.47L256.00 81.03L259.73 82.90L261.13 82.90L261.60 83.37L262.53 83.37L265.80 84.77L267.20 84.77L269.07 85.70L271.17 87.80L271.17 89.67L269.53 91.77L267.67 92.70L263.00 92.70L259.73 91.30L256.00 87.57L255.53 87.57L250.63 92.00L250.63 92.47L256.00 97.37L256.93 97.37L258.33 98.30L261.13 98.77L261.60 99.23L269.07 99.23L274.67 96.90L277.70 93.87L278.63 92.00L278.63 90.60L279.10 90.13L279.10 85.93L278.63 85.47L278.17 83.13L276.53 81.03L276.07 81.03L274.67 79.63L272.80 78.70L271.87 78.70L270.47 77.77L269.07 77.77L268.60 77.30L267.20 77.30L265.33 76.37L262.53 75.90L261.60 75.43L259.50 72.87L259.97 71.47L261.13 70.30L262.07 70.30L262.53 69.83L264.40 69.83L264.87 69.37L265.33 69.83L267.67 69.83L270.93 71.70L272.33 73.57L273.27 73.57L277.70 70.07L277.23 68.67L274.67 66.10L272.33 64.70L271.40 64.70L269.53 63.77L267.67 63.77L267.20 63.30L263.00 63.30ZM316.67 63.30L316.20 63.77L314.33 63.77L311.07 65.17L308.27 67.97L307.80 63.77L300.80 63.77L300.10 64.47L300.33 113.23L308.03 113.00L308.27 94.57L312.47 98.30L313.40 98.30L315.27 99.23L321.33 99.23L321.80 98.77L323.20 98.77L327.87 95.97L330.43 92.93L332.30 89.20L332.30 88.27L332.77 87.80L332.77 85.93L333.23 85.47L333.23 77.07L332.77 76.60L332.77 75.20L332.30 74.73L332.30 73.80L330.90 70.53L326.47 65.63L322.73 63.77L320.87 63.77L320.40 63.30L317.13 63.30ZM215.87 63.77L215.17 64.47L215.63 64.93L215.63 65.87L216.57 67.27L216.57 68.20L217.50 69.60L218.43 72.87L219.83 75.20L219.83 76.13L220.77 77.53L220.77 78.47L221.70 79.87L222.63 83.13L224.03 85.47L224.03 86.40L224.97 87.80L224.97 88.73L225.90 90.13L226.83 93.40L228.23 95.73L228.23 96.67L227.30 98.07L226.37 101.33L224.97 103.67L224.03 106.93L221.70 111.60L221.93 112.77L229.87 112.77L230.57 112.07L231.03 110.20L231.97 108.80L231.97 107.87L232.90 106.47L232.90 105.53L234.30 103.20L234.30 102.27L235.23 100.87L235.23 99.93L237.10 96.20L237.10 95.27L238.03 93.87L238.03 92.93L239.43 90.60L239.43 89.67L240.37 88.27L240.37 87.33L241.30 85.93L241.30 85.00L243.17 81.27L243.17 80.33L244.57 78.00L244.57 77.07L245.50 75.67L245.50 74.73L246.43 73.33L247.37 70.07L249.70 65.40L249.70 64.00L241.30 64.00L232.67 87.57L231.97 86.87L231.50 84.53L230.57 83.13L229.17 78.00L228.23 76.60L226.83 71.47L225.90 70.07L225.90 69.13L225.43 68.67L225.43 67.73L224.03 64.47L223.33 63.77L216.33 63.77ZM285.40 63.77L284.70 64.47L284.93 98.77L292.63 98.53L292.63 64.00L285.87 63.77ZM314.80 70.77L314.33 71.23L312.00 71.70L308.97 74.73L307.57 78.00L307.57 84.53L308.03 85.00L308.50 87.33L311.07 90.37L311.53 90.37L312.47 91.30L313.40 91.30L313.87 91.77L315.73 91.77L316.20 92.23L317.13 91.77L319.00 91.77L320.87 90.83L323.43 88.27L323.43 87.80L324.37 86.87L324.83 84.07L325.30 83.60L325.30 79.40L324.83 78.93L324.83 77.53L324.37 77.07L323.90 75.20L321.33 72.17L318.07 70.77L315.27 70.77Z">
+            </path>
+            <path fill="#d5ac4e" fill-rule="evenodd"
+              d="M425.40 51.17L417.70 55.60L417.47 63.77L411.87 63.77L411.17 64.47L411.40 70.30L417.70 70.53L417.70 92.00L418.17 92.47L418.63 94.80L420.03 96.20L420.03 96.67L422.13 98.30L423.07 98.30L424.93 99.23L431.00 99.23L431.47 98.77L432.87 98.77L433.57 98.07L433.57 92.47L431.93 92.23L431.47 92.70L428.20 92.70L426.57 91.07L426.10 90.13L426.10 88.73L425.63 88.27L425.63 70.53L433.57 70.07L433.57 64.47L432.87 63.77L425.63 63.53L425.63 51.40ZM355.40 63.30L354.93 63.77L353.53 63.77L350.27 65.17L348.87 66.57L348.40 66.57L347.47 67.97L347.23 64.47L346.53 63.77L339.53 63.77L338.83 64.47L338.83 98.07L339.53 98.77L347.23 98.53L347.23 78.00L347.70 77.53L347.70 75.67L348.63 73.80L351.20 71.23L353.07 70.77L353.53 70.30L356.33 70.30L356.80 70.77L358.67 71.23L360.30 72.87L361.23 74.73L361.23 76.13L361.70 76.60L361.70 98.53L369.63 98.53L369.63 73.33L369.17 72.87L369.17 71.00L367.77 68.20L364.73 65.17L361.47 63.77L359.60 63.77L359.13 63.30L355.87 63.30ZM389.93 63.30L389.47 63.77L387.60 63.77L387.13 64.23L386.20 64.23L382.47 66.10L380.60 67.97L380.13 67.97L379.90 68.67L378.03 70.53L376.17 74.27L376.17 75.20L375.70 75.67L375.70 77.53L375.23 78.00L375.23 85.00L375.70 85.47L375.70 86.87L376.17 87.33L377.10 90.60L378.03 91.53L378.97 93.40L381.53 95.97L385.73 98.30L388.53 98.77L389.00 99.23L396.00 99.23L396.47 98.77L399.27 98.30L402.53 96.43L407.43 91.07L408.37 89.20L408.83 86.87L409.30 86.40L409.30 84.07L409.77 83.60L409.77 78.93L409.30 78.47L408.83 74.73L406.03 69.60L403.00 66.57L398.80 64.23L397.87 64.23L397.40 63.77L395.53 63.77L395.07 63.30L390.40 63.30ZM450.13 63.30L449.67 63.77L447.80 63.77L447.33 64.23L446.40 64.23L441.97 66.80L441.97 67.27L438.70 71.00L437.77 72.87L437.77 73.80L436.83 75.67L436.83 77.53L436.37 78.00L436.37 85.47L436.83 85.93L436.83 87.33L437.30 87.80L437.30 88.73L438.70 92.00L442.67 96.43L445.93 98.30L448.73 98.77L449.20 99.23L457.13 99.23L457.60 98.77L460.87 98.30L465.07 95.97L467.17 93.87L467.17 93.40L463.20 88.50L462.73 88.50L459.93 90.83L458.07 91.30L457.60 91.77L456.20 91.77L455.73 92.23L451.53 92.23L451.07 91.77L449.67 91.77L447.33 90.37L445.70 88.73L444.30 85.47L444.30 84.53L445.00 83.83L467.87 83.83L468.57 82.67L468.57 79.40L468.10 78.93L467.63 73.80L464.83 68.67L462.27 66.10L460.87 65.63L459.93 64.70L459.00 64.70L457.13 63.77L454.80 63.77L454.33 63.30L450.60 63.30ZM483.27 63.30L482.80 63.77L480.93 63.77L479.53 64.70L478.60 64.70L474.17 68.67L473.70 70.53L473.23 71.00L473.23 75.67L473.70 76.13L473.70 77.07L475.10 79.40L478.60 81.97L479.53 81.97L480.93 82.90L481.87 82.90L483.73 83.83L485.13 83.83L485.60 84.30L489.33 85.23L491.90 87.33L492.37 89.20L490.27 91.77L488.40 92.70L483.73 92.70L483.27 92.23L481.40 91.77L480.00 90.37L479.53 90.37L477.20 87.57L476.27 87.57L471.37 92.00L471.83 92.93L476.27 96.90L479.07 98.30L481.87 98.77L482.33 99.23L489.80 99.23L490.27 98.77L493.07 98.30L497.03 95.73L497.03 95.27L498.90 93.40L499.37 91.53L499.83 91.07L499.83 85.00L498.43 82.20L496.33 80.10L492.60 78.23L483.73 75.90L481.87 74.97L480.70 73.80L480.70 71.93L482.33 70.30L483.27 69.83L485.13 69.83L485.60 69.37L486.07 69.83L488.40 69.83L488.87 70.30L489.80 70.30L493.53 73.57L494.47 73.57L498.43 70.07L498.43 69.13L494.93 65.63L492.13 64.23L491.20 64.23L490.73 63.77L488.87 63.77L488.40 63.30L483.73 63.30ZM391.80 70.30L391.33 70.77L389.47 70.77L387.60 71.70L384.10 75.67L383.63 78.47L383.17 78.93L383.17 83.60L383.63 84.07L383.63 85.47L384.10 85.93L384.57 87.80L387.13 90.83L390.40 92.23L394.13 92.23L394.60 91.77L396.93 91.30L399.97 88.27L401.37 85.00L401.37 82.20L401.83 81.73L401.83 80.80L401.37 80.33L401.37 77.53L399.97 74.27L397.40 71.70L395.53 70.77L393.67 70.77L393.20 70.30L392.27 70.30ZM450.13 70.30L446.87 72.17L445.23 74.27L444.77 76.13L444.30 76.60L444.53 78.23L460.63 78.00L460.63 75.67L458.53 72.17L455.27 70.30L450.60 70.30Z">
+            </path>
+          </g>
+        </svg>
+      </div>
+      <div class="footer-links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="./privacy-policy.html">Privacy</a>
+      </div>
+      <div class="footer-copy">© 2026 mysipnotes · Made for the curious palate</div>
+    </div>
+  </footer>
+
 </body>
-
 </html>
